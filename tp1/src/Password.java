@@ -112,11 +112,19 @@ public class Password {
      * @return A HashMap where each password is mapped to a Boolean value:
      *         true if the password is strong, false otherwise
      */
-    public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
-
-        // Code here
-
-        return null;
+    public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) 
+    {
+    // Crée une nouvelle HashMap pour stocker les résultats
+    HashMap<String, Boolean> passwordStrengthMap = new HashMap<>();
+    
+    HashMap<String, Boolean> result = new HashMap<>();
+    // Itère sur chaque mot de passe de la liste
+    for (String password : passwords) 
+        {// Vérifie si le mot de passe est fort et stocke le résultat
+        result.put(password, isStrongPassword(password));
+        }
+    
+    return passwordStrengthMap;
     }
 
     /**
