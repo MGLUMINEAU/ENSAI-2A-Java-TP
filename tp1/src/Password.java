@@ -64,39 +64,40 @@ public class Password {
      * @param password the password to check
      * @return true if the password is strong, false otherwise
      */
+
+
     public static boolean isStrongPassword(String password) {
-    if (password.length() < 12) {
+    if (password.length() < 12) 
+        {
         return false;
-    } // le teste initiale 
+        }           // le teste initiale 
     
-    // Initialise évènement (drapeau) associé à chaque critère 
+                    // Initialise évènement (drapeau) associé à chaque critère 
     boolean hasUppercase = false;
     boolean hasLowercase = false;
     boolean hasDigit = false;
     boolean noWhitespace = true;
     
-    // Vérifie chaque caractère
-    for (char c : password.toCharArray()) {
-        // Si espace trouvé, le mot de passe n'est pas fort
-        if (Character.isWhitespace(c)) {
-            noWhitespace = false;
-        }
-        // n'est vrai que si on a pas d'espace 
+        // Vérifie chaque caractère
+    for (char c : password.toCharArray()) 
+        // on parcours les element du mdp un par un
+    {
+            // Si espace trouvé, le mot de passe n'est pas fort
+        if (Character.isWhitespace(c)) 
+            {noWhitespace = false;}
+            // n'est vrai que si on a pas d'espace 
 
-        // Vérifie majuscule (n'est vrai que si on a une majuscule)
-        if (Character.isUpperCase(c)) {
-            hasUppercase = true;
-        }
+            // Vérifie majuscule (n'est vrai que si on a une majuscule)
+        if (Character.isUpperCase(c)) 
+            {hasUppercase = true;}
         
-        // Vérifie minuscule (n'est vrai que si on a une minuscule)
-        if (Character.isLowerCase(c)) {
-            hasLowercase = true;
-        }
+            // Vérifie minuscule (n'est vrai que si on a une minuscule)
+        if (Character.isLowerCase(c)) 
+            {hasLowercase = true;}
         
-        // Vérifie chiffre (n'est vrai que si on a un chifre)
-        if (Character.isDigit(c)) {
-            hasDigit = true;
-        }
+            // Vérifie chiffre (n'est vrai que si on a un chifre)
+        if (Character.isDigit(c)) 
+            {hasDigit = true;}
     }
     
     // Fort seulement si tous les critères sont remplis 
