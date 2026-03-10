@@ -39,15 +39,10 @@ public class Password {
      * @return the 6-digit number that matches, or null if no match is found
      */
     public static String bruteForce6Digit(String targetHash) {
-    for (int i = 0; i <= 999999; i++) {
-        String candidate = String.format("%06d", i);
-        
-        if (hashPassword(candidate).equals(targetHash)) {
-            return candidate;
-        }
-    }
-    
-    return null;
+
+        // Code here
+
+        return null;
     }
 
     /**
@@ -64,45 +59,12 @@ public class Password {
      * @param password the password to check
      * @return true if the password is strong, false otherwise
      */
-
-
     public static boolean isStrongPassword(String password) {
-    if (password.length() < 12) 
-        {
-        return false;
-        }           // le teste initiale 
-    
-                    // Initialise évènement (drapeau) associé à chaque critère 
-    boolean hasUppercase = false;
-    boolean hasLowercase = false;
-    boolean hasDigit = false;
-    boolean noWhitespace = true;
-    
-        // Vérifie chaque caractère
-    for (char c : password.toCharArray()) 
-        // on parcours les element du mdp un par un
-    {
-            // Si espace trouvé, le mot de passe n'est pas fort
-        if (Character.isWhitespace(c)) 
-            {noWhitespace = false;}
-            // n'est vrai que si on a pas d'espace 
 
-            // Vérifie majuscule (n'est vrai que si on a une majuscule)
-        if (Character.isUpperCase(c)) 
-            {hasUppercase = true;}
-        
-            // Vérifie minuscule (n'est vrai que si on a une minuscule)
-        if (Character.isLowerCase(c)) 
-            {hasLowercase = true;}
-        
-            // Vérifie chiffre (n'est vrai que si on a un chifre)
-        if (Character.isDigit(c)) 
-            {hasDigit = true;}
+        // Code here
+
+        return false;
     }
-    
-    // Fort seulement si tous les critères sont remplis 
-    return hasUppercase && hasLowercase && hasDigit && noWhitespace;
-}   // on calcule l'intersection de tout ces boolen
 
     /**
      * Checks the strength of multiple passwords and stores the results in a
@@ -112,19 +74,11 @@ public class Password {
      * @return A HashMap where each password is mapped to a Boolean value:
      *         true if the password is strong, false otherwise
      */
-    public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) 
-    {
-    // Crée une nouvelle HashMap pour stocker les résultats
-    HashMap<String, Boolean> passwordStrengthMap = new HashMap<>();
-    
-    HashMap<String, Boolean> result = new HashMap<>();
-    // Itère sur chaque mot de passe de la liste
-    for (String password : passwords) 
-        {// Vérifie si le mot de passe est fort et stocke le résultat
-        result.put(password, isStrongPassword(password));
-        }
-    
-    return passwordStrengthMap;
+    public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
+
+        // Code here
+
+        return null;
     }
 
     /**
